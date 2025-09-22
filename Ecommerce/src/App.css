@@ -2,18 +2,18 @@
   font-family: sans-serif;
   text-align: center;
 }
-/* RAW 방식 */
+/* RAW 방식 
 .main-bg {
   height: 300px;
   background-image: url("https://raw.githubusercontent.com/Heo-Yoon-5025/CDN_IMG/main/Img/main.png");
   background-size: cover;
   background-position: center;
 }
-/* jsDelivr 방식
+  */
+/* jsDelivr 방식 */
 .main-bg {
   height: 300px;
   background-image: url("https://cdn.jsdelivr.net/gh/Heo-Yoon-5025/CDN_IMG@main/Img/main.png");
   background-size: cover;
   background-position: center;
 }
-*/
