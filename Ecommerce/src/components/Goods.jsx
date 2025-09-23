@@ -1,10 +1,10 @@
 // src/components/Goods.jsx
 // props: shoes(상품 객체), i(이미지 번호)
-// ✅ Goods 컴포넌트: 상품 1개 카드
+
 export default function Goods({ shoes, i }) {
   // 이미지 경로를 인덱스로 동적으로 생성
-  // CDN에서 이미지 불러오기 (jsDelivr)
   const imgSrc = `https://cdn.jsdelivr.net/gh/Heo-Yoon-5025/CDN_IMG@main/Img/shoe${i}.jpg`;
+
   return (
     <div className="p-2">
       {/* 상품 이미지 */}
