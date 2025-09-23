@@ -29,13 +29,19 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             {/* NavLink: 현재 페이지면 active 클래스 자동 추가 */}
-            <NavLink to="/" className="nav-link" aria-current="page">
+            <NavLink to="/" className="nav-link">
               Home
             </NavLink>
-            <NavLink to="/detail" className="nav-link" aria-current="page">
+            <NavLink to="/detail" className="nav-link">
               Detail
             </NavLink>
-            <NavLink to="/" className="nav-link" aria-current="page">
+            <NavLink to="/company/manpower" className="nav-link">
+              ManPower
+            </NavLink>
+            <NavLink to="/company/map" className="nav-link">
+              Map
+            </NavLink>
+            <NavLink to="/" className="nav-link">
               About
             </NavLink>
           </div>
