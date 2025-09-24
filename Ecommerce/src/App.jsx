@@ -11,9 +11,10 @@ import Navbar from "./components/Navbar.jsx"; // 상단 메뉴
 import Home from "./components/Home.jsx"; // 홈 페이지
 import Footer from "./components/Footer.jsx"; // 하단 카드
 import { Route, Routes } from "react-router-dom"; // 라우터 (페이지 이동)
-import Detail from "./router/Detail.jsx"; // 상세 페이지
+import Detail from "./pages/Detail.jsx"; // 상세 페이지
 import Company from "./components/Company.jsx";
 import { ManpowerPage, MapPage, NotFound } from "./components/Information.jsx";
+import Remove from "./pages/Remove"; // ✅ 회원 탈퇴 컴포넌트 불러오기
 
 export default function App() {
   // ✅ 상품 데이터를 상태로 보관 (나중에 수정/추가할 수 있도록)
@@ -30,13 +31,15 @@ export default function App() {
           {/* "/" 주소 → Home 컴포넌트 보여주기 */}
           <Route path="/" element={<Home shoes={shoes}></Home>} />
           {/* "/detail" 주소 → Detail 컴포넌트 보여주기 */}
-          <Route path="/detail" element={<Detail shoes={shoes} />} />
+          <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
           {/* "/company" 주소 → Company 컴포넌트 보여주기 */}
           <Route path="/company" element={<Company />}>
             <Route path="manpower" element={<ManpowerPage />} />
             <Route path="map" element={<MapPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
+          {/* "/remove" 주소 → Remove 컴포넌트 보여주기 */}
+          <Route path="/remove" element={<Remove />} />
         </Routes>
 
         {/* 하단 카드 */}

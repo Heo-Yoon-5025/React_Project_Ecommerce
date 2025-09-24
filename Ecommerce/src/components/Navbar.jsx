@@ -44,6 +44,9 @@ export default function Navbar() {
             <NavLink to="/" className="nav-link">
               About
             </NavLink>
+            <NavLink to="/remove" className="nav-link">
+              Account Remove
+            </NavLink>
           </div>
         </div>
       </div>
