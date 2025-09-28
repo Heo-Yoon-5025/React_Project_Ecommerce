@@ -1,12 +1,11 @@
 // src/App.jsx
-import { useState } from "react"; // React의 상태 관리 훅
+import { useEffect, useState } from "react"; // React의 상태 관리 훅
 import "./App.css";
 // Bootstrap (스타일 프레임워크)
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // 데이터 & 컴포넌트
-import data from "./data.jsx"; // 상품 데이터 배열
 import Navbar from "./components/Navbar.jsx"; // 상단 메뉴
 import Home from "./components/Home.jsx"; // 홈 페이지
 import Footer from "./components/Footer.jsx"; // 하단 카드
@@ -15,10 +14,24 @@ import Detail from "./pages/Detail.jsx"; // 상세 페이지
 import Company from "./components/Company.jsx";
 import { ManpowerPage, MapPage, NotFound } from "./components/Information.jsx";
 import Remove from "./pages/Remove"; // ✅ 회원 탈퇴 컴포넌트 불러오기
+import axios from "axios";
 
 export default function App() {
   // ✅ 상품 데이터를 상태로 보관 (나중에 수정/추가할 수 있도록)
-  let [shoes, setShoes] = useState(data);
+  let [shoes, setShoes] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://raw.githubusercontent.com/Heo-Yoon-5025/CDN_IMG/refs/heads/main/Jsondata/data.json"
+      )
+      .then((res) => {
+        setShoes(res.data);
+      })
+      .catch((err) => {
+        console.error("데이터를 불러오지 못했습니다.", err);
+      }, []);
+  });
 
   return (
     <>
