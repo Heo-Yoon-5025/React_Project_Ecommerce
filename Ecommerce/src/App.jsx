@@ -23,15 +23,15 @@ export default function App() {
   useEffect(() => {
     axios
       .get(
-        "https://raw.githubusercontent.com/Heo-Yoon-5025/CDN_IMG/refs/heads/main/Jsondata/data.json"
+        "https://cdn.jsdelivr.net/gh/Heo-Yoon-5025/CDN_IMG@main/Jsondata/data.json"
       )
       .then((res) => {
         setShoes(res.data);
       })
       .catch((err) => {
         console.error("데이터를 불러오지 못했습니다.", err);
-      }, []);
-  });
+      });
+  }, []);
 
   return (
     <>

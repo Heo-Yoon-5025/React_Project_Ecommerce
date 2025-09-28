@@ -15,7 +15,7 @@ export default function Home({ shoes, setShoes }) {
         setShoes((prev) => [...prev, ...res.data]);
       })
       .catch((err) => {
-        console.log("fetch Error : ", err);
+        console.log("Axios Error : ", err);
       });
   };
   return (
