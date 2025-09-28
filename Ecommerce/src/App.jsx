@@ -18,7 +18,7 @@ import Remove from "./pages/Remove"; // ✅ 회원 탈퇴 컴포넌트 불러오
 
 export default function App() {
   // ✅ 상품 데이터를 상태로 보관 (나중에 수정/추가할 수 있도록)
-  let [shoes] = useState(data);
+  let [shoes, setShoes] = useState(data);
 
   return (
     <>
@@ -29,7 +29,10 @@ export default function App() {
         {/* 라우팅: URL 주소에 따라 다른 컴포넌트 보여주기 */}
         <Routes>
           {/* "/" 주소 → Home 컴포넌트 보여주기 */}
-          <Route path="/" element={<Home shoes={shoes}></Home>} />
+          <Route
+            path="/"
+            element={<Home shoes={shoes} setShoes={setShoes}></Home>}
+          />
           {/* "/detail" 주소 → Detail 컴포넌트 보여주기 */}
           <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
           {/* "/company" 주소 → Company 컴포넌트 보여주기 */}
