@@ -15,6 +15,7 @@ import Company from "./components/Company.jsx";
 import { ManpowerPage, MapPage, NotFound } from "./components/Information.jsx";
 import Remove from "./pages/Remove"; // ✅ 회원 탈퇴 컴포넌트 불러오기
 import axios from "axios";
+import Cart from "./pages/Cart.jsx";
 
 export default function App() {
   // ✅ 상품 데이터를 상태로 보관 (나중에 수정/추가할 수 있도록)
@@ -48,6 +49,7 @@ export default function App() {
           />
           {/* "/detail" 주소 → Detail 컴포넌트 보여주기 */}
           <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
+          <Route path="/cart" element={<Cart />} />
           {/* "/company" 주소 → Company 컴포넌트 보여주기 */}
           <Route path="/company" element={<Company />}>
             <Route path="manpower" element={<ManpowerPage />} />

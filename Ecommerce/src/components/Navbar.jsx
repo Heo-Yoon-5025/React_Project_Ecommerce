@@ -35,6 +35,9 @@ export default function Navbar() {
             <NavLink to="/detail" className="nav-link">
               Detail
             </NavLink>
+            <NavLink to="/cart" className="nav-link">
+              Cart
+            </NavLink>
             <NavLink to="/company/manpower" className="nav-link">
               ManPower
             </NavLink>
