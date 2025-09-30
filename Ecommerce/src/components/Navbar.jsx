@@ -32,9 +32,6 @@ export default function Navbar() {
             <NavLink to="/" className="nav-link">
               Home
             </NavLink>
-            <NavLink to="/detail" className="nav-link">
-              Detail
-            </NavLink>
             <NavLink to="/cart" className="nav-link">
               Cart
             </NavLink>

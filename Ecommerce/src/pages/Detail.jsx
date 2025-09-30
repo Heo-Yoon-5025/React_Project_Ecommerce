@@ -1,9 +1,15 @@
 // src/Router/Detail.jsx
 import { useParams } from "react-router-dom";
+import { addItem } from "../store/Store";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom"; // ✅ 페이지 이동용 훅 추가
 
 export default function Detail({ shoes }) {
   let { id } = useParams();
   let dataId = shoes.find((x) => x.id == id);
+  let dispatch = useDispatch();
+  let navigate = useNavigate(); // ✅ navigate 생성
+
   // ✅ 방어 코드: 데이터가 없을 때
   if (!dataId) {
     return (
@@ -33,7 +39,21 @@ export default function Detail({ shoes }) {
           <h4 className="pt-2">{dataId.title}</h4>
           <p className="text-muted">{dataId.content}</p>
           <p className="fw-bold mb-3">{dataId.price.toLocaleString()}원</p>
-          <button className="btn btn-danger">order</button>
+          {/* ORDER 버튼 */}
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              // ✅ Redux store에 아이템 추가
+              dispatch(
+                addItem({ id: dataId.id, name: dataId.title, count: 1 })
+              );
+
+              // ✅ 카트 페이지로 이동
+              navigate("/cart");
+            }}
+          >
+            ORDER
+          </button>
         </div>
       </div>
     </div>
